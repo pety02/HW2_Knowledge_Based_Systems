@@ -227,6 +227,12 @@
         <NamedIndividual IRI="#Russia"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Strawberries"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Strawberry-Tea"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Tomatto-Souce"/>
     </Declaration>
     <EquivalentClasses>
@@ -271,6 +277,13 @@
         </ObjectUnionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Appetizers"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#IsServedAfter"/>
+            <Class IRI="#Alchoholic"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Bar"/>
         <ObjectIntersectionOf>
             <ObjectSomeValuesFrom>
@@ -310,6 +323,27 @@
             <ObjectProperty IRI="#hasIngridient"/>
             <Class IRI="#Non-Alchoholic"/>
         </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Starters"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#IsServedAfter"/>
+            <Class IRI="#Appetizers"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Sweets"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#IsServedAfter"/>
+            <Class IRI="#Starters"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Теа"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isFlavoredWith"/>
+            <Class IRI="#Fruits"/>
+        </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Alchoholic"/>
@@ -369,7 +403,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Hot"/>
-        <Class IRI="#Drink"/>
+        <Class IRI="#Non-Alchoholic"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Juice"/>
@@ -477,6 +511,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Fizzy"/>
+        <Class IRI="#Hot"/>
         <Class IRI="#Juice"/>
         <Class IRI="#Water"/>
     </DisjointClasses>
@@ -522,6 +557,10 @@
         <Class IRI="#Country"/>
         <NamedIndividual IRI="#Russia"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fruits"/>
+        <NamedIndividual IRI="#Strawberries"/>
+    </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#servedWithDrink"/>
         <NamedIndividual IRI="#Almonds"/>
@@ -558,6 +597,11 @@
         <NamedIndividual IRI="#Coca-Cola"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#originateFrom"/>
+        <NamedIndividual IRI="#Finland"/>
+        <NamedIndividual IRI="#Russia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#servedWithDrink"/>
         <NamedIndividual IRI="#Peanuts"/>
         <NamedIndividual IRI="#Bloody-Mary"/>
@@ -586,6 +630,11 @@
         <ObjectProperty IRI="#offers"/>
         <NamedIndividual IRI="#Petuk"/>
         <NamedIndividual IRI="#Peanuts"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFlavoredWith"/>
+        <NamedIndividual IRI="#Strawberry-Tea"/>
+        <NamedIndividual IRI="#Strawberries"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#isAlchoholic"/>
@@ -660,10 +709,6 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasIngridient"/>
         <ObjectProperty IRI="#isIngrientOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#originateFrom"/>
-        <ObjectProperty IRI="#producedIn"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#servedWithDrink"/>
