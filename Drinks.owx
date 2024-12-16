@@ -92,6 +92,9 @@
         <Class IRI="#Rose"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Rum"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Salads"/>
     </Declaration>
     <Declaration>
@@ -134,6 +137,9 @@
         <ObjectProperty IRI="#isFlavoredWith"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isIngrientOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isSituatedIn"/>
     </Declaration>
     <Declaration>
@@ -141,9 +147,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#originateFrom"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#pairsWithFood"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#producedIn"/>
@@ -188,10 +191,25 @@
         <DataProperty IRI="#servedAtTemperature"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Almonds"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Arabic-Coffee"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Baccardi"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Bloody-Mary"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Bulgaria"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Cappucino"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Coca-Cola"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Cuba-Libre"/>
@@ -212,29 +230,79 @@
         <NamedIndividual IRI="#Tomatto-Souce"/>
     </Declaration>
     <EquivalentClasses>
+        <Class IRI="#Alchoholic"/>
+        <DataHasValue>
+            <DataProperty IRI="#isAlchoholic"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </DataHasValue>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Alchoholic-Cocktail"/>
-        <ObjectUnionOf>
-            <ObjectIntersectionOf>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#hasIngridient"/>
-                    <Class IRI="#Alchoholic"/>
-                </ObjectSomeValuesFrom>
-                <ObjectSomeValuesFrom>
-                    <ObjectProperty IRI="#hasIngridient"/>
-                    <Class IRI="#Non-Alchoholic"/>
-                </ObjectSomeValuesFrom>
-            </ObjectIntersectionOf>
-            <ObjectMinCardinality cardinality="2">
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#hasIngridient"/>
                 <Class IRI="#Alchoholic"/>
-            </ObjectMinCardinality>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasIngridient"/>
+                <Class IRI="#Non-Alchoholic"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#servedWithFood"/>
+                <Class IRI="#Appetizers"/>
+            </ObjectSomeValuesFrom>
+            <DataHasValue>
+                <DataProperty IRI="#isAlchoholic"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Appetizers"/>
+        <ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#servedWithDrink"/>
+                <Class IRI="#Alchoholic"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#servedWithDrink"/>
+                <Class IRI="#Alchoholic-Cocktail"/>
+            </ObjectSomeValuesFrom>
         </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Bar"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isSituatedIn"/>
+                <Class IRI="#Country"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#offers"/>
+                <Class IRI="#MenuItem"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Coffee"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isFlavoredWith"/>
+            <Class IRI="#Coffee"/>
+        </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Hot"/>
         <DataMinCardinality cardinality="60">
             <DataProperty IRI="#servedAtTemperature"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
         </DataMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Non-Alchoholic"/>
+        <DataHasValue>
+            <DataProperty IRI="#isAlchoholic"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+        </DataHasValue>
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Non-Alchoholic-Cocktail"/>
@@ -336,6 +404,10 @@
         <Class IRI="#Wine"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Rum"/>
+        <Class IRI="#Spirit"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Salads"/>
         <Class IRI="#Appetizers"/>
     </SubClassOf>
@@ -392,12 +464,6 @@
         <Class IRI="#Sweets"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Bar"/>
-        <Class IRI="#Country"/>
-        <Class IRI="#Drink"/>
-        <Class IRI="#Food"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#Cabernet-Souvignon"/>
         <Class IRI="#Merlot"/>
     </DisjointClasses>
@@ -424,6 +490,11 @@
         <Class IRI="#White"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#Rum"/>
+        <Class IRI="#Vodka"/>
+        <Class IRI="#Whiskey"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Spirit"/>
         <Class IRI="#Wine"/>
     </DisjointClasses>
@@ -431,30 +502,31 @@
         <Class IRI="#Sweets"/>
         <Class IRI="#Vegetables"/>
     </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#Vodka"/>
-        <Class IRI="#Whiskey"/>
-    </DisjointClasses>
     <ClassAssertion>
-        <Class IRI="#Vodka"/>
-        <NamedIndividual IRI="#Finland"/>
+        <Class IRI="#Coffee"/>
+        <NamedIndividual IRI="#Arabic-Coffee"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Food"/>
-        <NamedIndividual IRI="#Peanuts"/>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Bulgaria"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Bar"/>
-        <NamedIndividual IRI="#Petuk"/>
+        <Class IRI="#Fizzy"/>
+        <NamedIndividual IRI="#Coca-Cola"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Alchoholic-Cocktail"/>
+        <NamedIndividual IRI="#Cuba-Libre"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Country"/>
         <NamedIndividual IRI="#Russia"/>
     </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Juice"/>
-        <NamedIndividual IRI="#Tomatto-Souce"/>
-    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servedWithDrink"/>
+        <NamedIndividual IRI="#Almonds"/>
+        <NamedIndividual IRI="#Cuba-Libre"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasIngridient"/>
         <NamedIndividual IRI="#Bloody-Mary"/>
@@ -466,14 +538,74 @@
         <NamedIndividual IRI="#Tomatto-Souce"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#pairsWithFood"/>
+        <ObjectProperty IRI="#servedWithFood"/>
         <NamedIndividual IRI="#Bloody-Mary"/>
         <NamedIndividual IRI="#Peanuts"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isFlavoredWith"/>
+        <NamedIndividual IRI="#Cappucino"/>
+        <NamedIndividual IRI="#Arabic-Coffee"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIngridient"/>
+        <NamedIndividual IRI="#Cuba-Libre"/>
+        <NamedIndividual IRI="#Baccardi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIngridient"/>
+        <NamedIndividual IRI="#Cuba-Libre"/>
+        <NamedIndividual IRI="#Coca-Cola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#servedWithDrink"/>
+        <NamedIndividual IRI="#Peanuts"/>
+        <NamedIndividual IRI="#Bloody-Mary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isSituatedIn"/>
+        <NamedIndividual IRI="#Petuk"/>
+        <NamedIndividual IRI="#Bulgaria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Petuk"/>
+        <NamedIndividual IRI="#Almonds"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Petuk"/>
+        <NamedIndividual IRI="#Bloody-Mary"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Petuk"/>
+        <NamedIndividual IRI="#Cuba-Libre"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#offers"/>
+        <NamedIndividual IRI="#Petuk"/>
+        <NamedIndividual IRI="#Peanuts"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAlchoholic"/>
+        <NamedIndividual IRI="#Baccardi"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAlchoholic"/>
+        <NamedIndividual IRI="#Bloody-Mary"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#servedAtTemperature"/>
         <NamedIndividual IRI="#Cappucino"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">60</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">65</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasAlchoholicContent"/>
+        <NamedIndividual IRI="#Finland"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">41</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#isAlchoholic"/>
@@ -498,6 +630,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isIngrientOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#isSituatedIn"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -507,10 +643,6 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#originateFrom"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#pairsWithFood"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -525,6 +657,21 @@
         <ObjectProperty IRI="#servedWithFood"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasIngridient"/>
+        <ObjectProperty IRI="#isIngrientOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#originateFrom"/>
+        <ObjectProperty IRI="#producedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#servedWithDrink"/>
+        <ObjectProperty IRI="#servedWithFood"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#offers"/>
+    </TransitiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#IsServedAfter"/>
         <Class IRI="#MenuItem"/>
@@ -538,6 +685,10 @@
         <Class IRI="#MenuItem"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isIngrientOf"/>
+        <Class IRI="#Drink"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isSituatedIn"/>
         <Class IRI="#Bar"/>
     </ObjectPropertyDomain>
@@ -548,10 +699,6 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#originateFrom"/>
         <Class IRI="#MenuItem"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#pairsWithFood"/>
-        <Class IRI="#Drink"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#producedIn"/>
@@ -578,6 +725,10 @@
         <Class IRI="#MenuItem"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#isIngrientOf"/>
+        <Class IRI="#Cocktail"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#isSituatedIn"/>
         <Class IRI="#Country"/>
     </ObjectPropertyRange>
@@ -588,10 +739,6 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#originateFrom"/>
         <Class IRI="#Country"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#pairsWithFood"/>
-        <Class IRI="#Food"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#producedIn"/>
@@ -715,7 +862,7 @@
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasAlchoholicContent"/>
-        <Datatype abbreviatedIRI="xsd:boolean"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#hasFlavor"/>
