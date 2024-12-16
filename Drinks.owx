@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/user/ontologies/2024/11/bar_ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/user/ontologies/2024/11/bar_ontology">
+    <Prefix name="" IRI="http://www.semanticweb.org/user/ontologies/2024/11/bar_ontology/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="bar_ontology" IRI="http://www.semanticweb.org/user/ontologies/2024/11/bar_ontology#"/>
+    <Declaration>
+        <Class IRI="#Alchoholic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Alchoholic-Cocktail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cabernet-Souvignon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Chardonnay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cocktail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cola"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Country"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Drink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fanta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fizzy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Food"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Garnacha"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Juice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Merlot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Non-Alchoholic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Non-Alchoholic-Cocktail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pinot-Noir"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Red"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Riesling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rose"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Spirit"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vodka"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Water"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Whiskey"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#White"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wine"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIngridient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFlavoredWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#originateFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pairsWithFood"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#containsSugar"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFlavor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isAlchoholic"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isCarbonated"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isServedIn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#servedAtTemperature"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Bloody-Mary"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Finland"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Peanuts"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Petuk"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Russia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tomatto-Souce"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#J&amp;B"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Alchoholic-Cocktail"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasIngridient"/>
+                    <Class IRI="#Alchoholic"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#hasIngridient"/>
+                    <Class IRI="#Non-Alchoholic"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasIngridient"/>
+                <Class IRI="#Alchoholic"/>
+            </ObjectMinCardinality>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Non-Alchoholic-Cocktail"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasIngridient"/>
+            <Class IRI="#Non-Alchoholic"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Alchoholic"/>
+        <Class IRI="#Drink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Alchoholic-Cocktail"/>
+        <Class IRI="#Cocktail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cabernet-Souvignon"/>
+        <Class IRI="#Red"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Chardonnay"/>
+        <Class IRI="#White"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cocktail"/>
+        <Class IRI="#Drink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cola"/>
+        <Class IRI="#Fizzy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fanta"/>
+        <Class IRI="#Fizzy"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fizzy"/>
+        <Class IRI="#Non-Alchoholic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Garnacha"/>
+        <Class IRI="#Rose"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Juice"/>
+        <Class IRI="#Non-Alchoholic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Merlot"/>
+        <Class IRI="#Red"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Non-Alchoholic"/>
+        <Class IRI="#Drink"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Non-Alchoholic-Cocktail"/>
+        <Class IRI="#Cocktail"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pinot-Noir"/>
+        <Class IRI="#Rose"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Red"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Riesling"/>
+        <Class IRI="#White"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rose"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Spirit"/>
+        <Class IRI="#Alchoholic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vodka"/>
+        <Class IRI="#Spirit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Water"/>
+        <Class IRI="#Non-Alchoholic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Whiskey"/>
+        <Class IRI="#Spirit"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#White"/>
+        <Class IRI="#Wine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wine"/>
+        <Class IRI="#Alchoholic"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Alchoholic"/>
+        <Class IRI="#Non-Alchoholic"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Alchoholic-Cocktail"/>
+        <Class IRI="#Non-Alchoholic-Cocktail"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Bar"/>
+        <Class IRI="#Country"/>
+        <Class IRI="#Drink"/>
+        <Class IRI="#Food"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Cabernet-Souvignon"/>
+        <Class IRI="#Merlot"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Chardonnay"/>
+        <Class IRI="#Riesling"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Cola"/>
+        <Class IRI="#Fanta"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Fizzy"/>
+        <Class IRI="#Juice"/>
+        <Class IRI="#Water"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Garnacha"/>
+        <Class IRI="#Pinot-Noir"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Red"/>
+        <Class IRI="#Rose"/>
+        <Class IRI="#White"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Spirit"/>
+        <Class IRI="#Wine"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Vodka"/>
+        <Class IRI="#Whiskey"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Vodka"/>
+        <NamedIndividual IRI="#Finland"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Food"/>
+        <NamedIndividual IRI="#Peanuts"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Bar"/>
+        <NamedIndividual IRI="#Petuk"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Country"/>
+        <NamedIndividual IRI="#Russia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Juice"/>
+        <NamedIndividual IRI="#Tomatto-Souce"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Whiskey"/>
+        <NamedIndividual IRI="#J&amp;B"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIngridient"/>
+        <NamedIndividual IRI="#Bloody-Mary"/>
+        <NamedIndividual IRI="#Finland"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIngridient"/>
+        <NamedIndividual IRI="#Bloody-Mary"/>
+        <NamedIndividual IRI="#Tomatto-Souce"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pairsWithFood"/>
+        <NamedIndividual IRI="#Bloody-Mary"/>
+        <NamedIndividual IRI="#Peanuts"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAlchoholic"/>
+        <NamedIndividual IRI="#Finland"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAlchoholic"/>
+        <NamedIndividual IRI="#Tomatto-Souce"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isAlchoholic"/>
+        <NamedIndividual IRI="#J&amp;B"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isFlavoredWith"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIngridient"/>
+        <Class IRI="#Cocktail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isFlavoredWith"/>
+        <Class IRI="#Water"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#originateFrom"/>
+        <Class IRI="#Drink"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#pairsWithFood"/>
+        <Class IRI="#Drink"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIngridient"/>
+        <Class IRI="#Drink"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isFlavoredWith"/>
+        <Class IRI="#Fizzy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isFlavoredWith"/>
+        <Class IRI="#Juice"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#originateFrom"/>
+        <Class IRI="#Country"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#pairsWithFood"/>
+        <Class IRI="#Food"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#containsSugar"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasFlavor"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isAlchoholic"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isCarbonated"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isServedIn"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#servedAtTemperature"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#containsSugar"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isAlchoholic"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isCarbonated"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#isServedIn"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#containsSugar"/>
+        <Class IRI="#Drink"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFlavor"/>
+        <Class IRI="#Drink"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isAlchoholic"/>
+        <Class IRI="#Drink"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isCarbonated"/>
+        <Class IRI="#Drink"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isServedIn"/>
+        <Class IRI="#Drink"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#servedAtTemperature"/>
+        <Class IRI="#Drink"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#containsSugar"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFlavor"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isAlchoholic"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isCarbonated"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isServedIn"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#servedAtTemperature"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
