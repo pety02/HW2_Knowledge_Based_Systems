@@ -32,6 +32,9 @@
         <Class IRI="#Chardonnay"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Client"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Cocktail"/>
     </Declaration>
     <Declaration>
@@ -128,7 +131,13 @@
         <ObjectProperty IRI="#hasBars"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasClient"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasIngridient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isClientOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isFlavoredWith"/>
@@ -227,6 +236,9 @@
         <NamedIndividual IRI="#Garnacha-Villa-Yambol"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Maria"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Merlot-Villa-Yambol"/>
     </Declaration>
     <Declaration>
@@ -240,6 +252,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Petuk-Mix"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Petur"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Russia"/>
@@ -449,6 +464,10 @@
         <Class IRI="#White"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Client"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Cocktail"/>
         <Class IRI="#Drink"/>
     </SubClassOf>
@@ -789,6 +808,11 @@
         <NamedIndividual IRI="#Petuk"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isClientOf"/>
+        <NamedIndividual IRI="#Maria"/>
+        <NamedIndividual IRI="#Petuk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isOfferedIn"/>
         <NamedIndividual IRI="#Merlot-Villa-Yambol"/>
         <NamedIndividual IRI="#Petuk"/>
@@ -826,6 +850,11 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isOfferedIn"/>
         <NamedIndividual IRI="#Petuk-Mix"/>
+        <NamedIndividual IRI="#Petuk"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isClientOf"/>
+        <NamedIndividual IRI="#Petur"/>
         <NamedIndividual IRI="#Petuk"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -912,7 +941,15 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasClient"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasIngridient"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isClientOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -955,6 +992,10 @@
         <ObjectProperty IRI="#servedWithFood"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="#IsServedAfter"/>
         <ObjectProperty IRI="#isSevedBefore"/>
@@ -962,6 +1003,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasBars"/>
         <ObjectProperty IRI="#isSituatedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasClient"/>
+        <ObjectProperty IRI="#isClientOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasIngridient"/>
@@ -994,8 +1039,16 @@
         <Class IRI="#Country"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasClient"/>
+        <Class IRI="#Bar"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasIngridient"/>
         <Class IRI="#MenuItem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isClientOf"/>
+        <Class IRI="#Client"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isFlavoredWith"/>
@@ -1050,8 +1103,16 @@
         <Class IRI="#Bar"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasClient"/>
+        <Class IRI="#Client"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasIngridient"/>
         <Class IRI="#MenuItem"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isClientOf"/>
+        <Class IRI="#Bar"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isFlavoredWith"/>
