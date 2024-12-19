@@ -146,7 +146,7 @@
         <ObjectProperty IRI="#isHomelandOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isIngrientOf"/>
+        <ObjectProperty IRI="#isIngridientOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isOfferedIn"/>
@@ -364,6 +364,20 @@
     </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Food"/>
+        <DataMinCardinality cardinality="0">
+            <DataProperty IRI="#containsCalories"/>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+        </DataMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Food"/>
+        <DataMinCardinality cardinality="1">
+            <DataProperty IRI="#hasPrice"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
+        </DataMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Food"/>
         <DataMinCardinality cardinality="170">
             <DataProperty IRI="#hasServingSize"/>
             <Datatype abbreviatedIRI="xsd:integer"/>
@@ -428,7 +442,7 @@
     <EquivalentClasses>
         <Class IRI="#Vegetables"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isIngrientOf"/>
+            <ObjectProperty IRI="#isIngridientOf"/>
             <Class IRI="#Salads"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
@@ -648,10 +662,6 @@
         <NamedIndividual IRI="#Coca-Cola"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Alchoholic-Cocktail"/>
-        <NamedIndividual IRI="#Cuba-Libre"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="#Starters"/>
         <NamedIndividual IRI="#French-Fries"/>
     </ClassAssertion>
@@ -778,7 +788,7 @@
         <NamedIndividual IRI="#Petuk"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isIngrientOf"/>
+        <ObjectProperty IRI="#isIngridientOf"/>
         <NamedIndividual IRI="#Cuccumber"/>
         <NamedIndividual IRI="#Shopska-Salad"/>
     </ObjectPropertyAssertion>
@@ -888,7 +898,7 @@
         <NamedIndividual IRI="#Petuk"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#isIngrientOf"/>
+        <ObjectProperty IRI="#isIngridientOf"/>
         <NamedIndividual IRI="#Tomatto"/>
         <NamedIndividual IRI="#Shopska-Salad"/>
     </ObjectPropertyAssertion>
@@ -957,7 +967,11 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isIngrientOf"/>
+        <ObjectProperty IRI="#isHomelandOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isIngridientOf"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
@@ -1010,7 +1024,7 @@
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasIngridient"/>
-        <ObjectProperty IRI="#isIngrientOf"/>
+        <ObjectProperty IRI="#isIngridientOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#isHomelandOf"/>
@@ -1024,9 +1038,6 @@
         <ObjectProperty IRI="#servedWithDrink"/>
         <ObjectProperty IRI="#servedWithFood"/>
     </InverseObjectProperties>
-    <SymmetricObjectProperty>
-        <ObjectProperty IRI="#isFlavoredWith"/>
-    </SymmetricObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#offers"/>
     </TransitiveObjectProperty>
@@ -1059,7 +1070,7 @@
         <Class IRI="#Country"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isIngrientOf"/>
+        <ObjectProperty IRI="#isIngridientOf"/>
         <Class IRI="#MenuItem"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
@@ -1123,7 +1134,7 @@
         <Class IRI="#MenuItem"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isIngrientOf"/>
+        <ObjectProperty IRI="#isIngridientOf"/>
         <Class IRI="#MenuItem"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
